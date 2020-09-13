@@ -40,6 +40,7 @@ Build - production
 
 ```
 build:production // will build the project use production configurations
+
 postbuild:production // Run build-background (or build-content when available) too
 ```
 
@@ -47,10 +48,4 @@ Others
 
 ```
 start - just run the app in localhost:3000
-```
-
-## Production
-
-```
-
 ```
