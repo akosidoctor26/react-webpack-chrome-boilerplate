@@ -10,7 +10,7 @@ const WebpackObfuscator = require('webpack-obfuscator');
 const htmlName = process.env.REACT_APP_HTML;
 module.exports = {
   webpack: override((config, env) => {
-    const configEnv = process.env.CONFIG_ENV || env;
+    const configEnv = process.env.REACT_APP_CONFIG_ENV || env;
 
     //#region PLUGINS
     // modify HtmlWebpackPlugin to use different entry .html

@@ -10,6 +10,12 @@ All commands are set up in /popup, where we watch each project during developmen
 
 ## Development
 
+Run
+
+```
+npm run watch
+```
+
 ### Commands
 
 Watch
@@ -48,4 +54,12 @@ Others
 
 ```
 start - just run the app in localhost:3000
+```
+
+## Deployment
+
+Run
+
+```
+npm run build:production
 ```

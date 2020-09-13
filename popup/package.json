@@ -3,18 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "config-env": "file:../config/env",
     "customize-cra": "1.0.0",
     "react": "^16.13.1",
     "react-app-rewired": "2.1.6",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
-    "config-env": "file:../config/env"
+    "react-scripts": "3.4.3"
   },
   "scripts": {
     "start": "cross-env REACT_APP_HTML=popup.html react-app-rewired start",
     "build:production": "cross-env REACT_APP_HTML=popup.html react-app-rewired build",
     "postbuild:production": "npm run build-background",
-    "build:development": "cross-env REACT_APP_HTML=popup.html CONFIG_ENV=development react-app-rewired build",
+    "build:development": "cross-env REACT_APP_HTML=popup.html REACT_APP_CONFIG_ENV=development react-app-rewired build",
     "postbuild:development": "npm run build-background",
     "build-background": "cd ../background && npm run build",
     "watch": "run-p --race watch:background watch:popup",
