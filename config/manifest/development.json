@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "react-webpack-chrome-extension-boilerplate",
+  "description": "react-webpack-chrome-extension-boilerplate DEVELOPMENT",
+  "version": "1.0.0",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "permissions": ["declarativeContent"],
+  "page_action": {
+    "default_title": "react-webpack-chrome-extension-boilerplate",
+    "default_popup": "popup.html"
+  }
+}

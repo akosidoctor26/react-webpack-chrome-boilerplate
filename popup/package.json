@@ -1,0 +1,65 @@
+{
+  "name": "react-webpack-chrome-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "customize-cra": "1.0.0",
+    "react": "^16.13.1",
+    "react-app-rewired": "2.1.6",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.3",
+    "config-env": "file:../config/env"
+  },
+  "scripts": {
+    "start": "cross-env REACT_APP_HTML=popup.html react-app-rewired start",
+    "build:production": "cross-env REACT_APP_HTML=popup.html react-app-rewired build",
+    "postbuild:production": "npm run build-background",
+    "build:development": "cross-env REACT_APP_HTML=popup.html CONFIG_ENV=development react-app-rewired build",
+    "postbuild:development": "npm run build-background",
+    "build-background": "cd ../background && npm run build",
+    "watch": "run-p --race watch:background watch:popup",
+    "watch:background": "npm-watch build-background",
+    "watch:popup": "npm-watch build:development",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "watch": {
+    "build:development": {
+      "patterns": [
+        "src"
+      ]
+    },
+    "build-background": {
+      "patterns": [
+        "../background/src"
+      ]
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "4.2.4",
+    "@testing-library/react": "9.5.0",
+    "@testing-library/user-event": "7.2.1",
+    "cross-env": "7.0.2",
+    "generate-json-webpack-plugin": "1.0.0",
+    "node-sass": "4.14.1",
+    "npm-run-all": "4.1.5",
+    "npm-watch": "0.7.0",
+    "webpack-cli": "3.3.12",
+    "webpack-obfuscator": "2.1.0"
+  }
+}
